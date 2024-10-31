@@ -108,14 +108,18 @@
             log(`> Serial Number: ${serialNumber}`);
             log(`> Records: (${message.records.length})`);
 
- let url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1&nfc=';
-            url1 = url1 + serialNumber;
+ let url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?nfc=' + serialNumber;
+ url1 = url1 +  '&siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1';
+            
           window.open(url1);
             
           });
         } catch (error) {
           log("錯誤:" + error);
-           let url2 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1&nfc=';
+          serialNumber = '5566';
+           let url2 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?nfc=12345&siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1&nfc=';
+          url2 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?nfc=' + serialNumber;
+           url2 = url2 +  '&siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1';
           window.open(url2);
         }
       });
