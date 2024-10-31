@@ -108,9 +108,9 @@
             log(`> Serial Number: ${serialNumber}`);
             log(`> Records: (${message.records.length})`);
 
- let url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?nfc=' + serialNumber;
+ let url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site';
  url1 = url1 +  '&siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1';
-            
+           url1 = url1 + '?nfc=' + serialNumber;
           window.open(url1);
             
           });
