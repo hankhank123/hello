@@ -116,8 +116,7 @@
           });
         } catch (error) {
 
-        let url3 =
-          decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
+       
           
           log("錯誤:" + error);
           serialNumber = '5566';
@@ -127,6 +126,9 @@
 
 
           window.open(url2);
+
+           let url3 =
+          decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
         }
       });
     </script>
