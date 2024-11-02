@@ -82,6 +82,7 @@
               if (result) {
                 console.log(result)
                 document.getElementById('result').textContent = result.text
+                alert(result.text );
               }
               if (err && !(err instanceof ZXing.NotFoundException)) {
                 console.error(err)
