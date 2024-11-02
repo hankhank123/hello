@@ -89,7 +89,8 @@
 
       if (!("NDEFReader" in window))
         ChromeSamples.setStatus("裝置不支援 Web NFC");
-      window.url3 =  window.location.href.split("&para=")[1].split("project1")[0];
+      var uu = window.location.href;
+    
 
 
     </script>
@@ -120,7 +121,7 @@
           });
         } catch (error) {
 
-                 let url =  decodeURIComponent(window.url3);
+                 let url =  decodeURIComponent(  uu.split("&para=")[1].split("project1")[0];);
              window.location.replace(url);
                        
         }
