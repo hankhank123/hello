@@ -18,7 +18,7 @@
 
     <section class="container" id="demo-content"> 
      
-      <h1 class="title">t16</h1>
+      <h1 class="title">t17</h1>
       <div>
         <a class="button" id="startButton">Start</a>
       </div>
@@ -27,9 +27,7 @@
         <video id="video" width="95%" height="50%" style="border: 1px solid gray"></video>
       </div>
 
-      <div>
-        <a class="confirm" id="confirmButton">Confirm</a>
-      </div>
+     
 
       <div id="sourceSelectPanel" style="display:none">
         <label for="sourceSelect">Change video source:</label>
@@ -73,32 +71,8 @@
 
             const sourceSelectPanel = document.getElementById('sourceSelectPanel')
             sourceSelectPanel.style.display = 'block'
-          }
-
-            document.getElementById('result').addEventListener('change', () => {
-
-                let txt = 
-            document.getElementById('result').textContent;
-
-              let url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?';
-                    url1 = url1 +  'siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1';
-                    url1 = url1 + '?nfc=' + txt;
-                    window.open(url1);
-                    
-                    setTimeout(window.close, 5000);
-            })
-
-          document.getElementById('confirmButton').addEventListener('click', () => {
-            let txt = 
-            document.getElementById('result').textContent;
-
-              let url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?';
-                    url1 = url1 +  'siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1';
-                    url1 = url1 + '?nfc=' + txt;
-                    window.open(url1);
-                    
-                    setTimeout(window.close, 5000);
-          })
+          } 
+          
 
           document.getElementById('startButton').addEventListener('click', () => {
           
@@ -129,7 +103,7 @@
              
                 let url2 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1?nfc=';
           
-                window.open(url2);
+                window.location.replace(url2);
 
                 let url3 = decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
 
