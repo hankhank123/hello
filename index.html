@@ -10,7 +10,6 @@
     <script>
 
 
-       ChromeSamples.setStatus(window.location.href);
       
       window.addEventListener("error", function (error) {
         if (ChromeSamples && ChromeSamples.setStatus) {
@@ -124,6 +123,8 @@
                  
             window.url3 =
           decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
+
+ ChromeSamples.setStatus(window.url3);
           
           serialNumber = '5566';
                 window.url3 = window.url3 + '?nfc=' + serialNumber;
