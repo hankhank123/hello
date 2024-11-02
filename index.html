@@ -105,6 +105,7 @@ window.url3 =
           decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
             
           log(window.url3);
+           ChromeSamples.setStatus(window.url3);
           
           ndef.addEventListener("readingerror", () => {
             log("無法讀取，請更換 NFC Tag");
@@ -128,7 +129,7 @@ window.url3 =
           decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
 
            log(window.url3);
-
+ ChromeSamples.setStatus(window.url3);
           
          
         }
