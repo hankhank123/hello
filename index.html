@@ -122,6 +122,8 @@ document.querySelector("#log").textContent = uu;
         } catch (error) {
 document.querySelector("#log").textContent = uu;
                  let url =  decodeURIComponent(  uu.split("&para=")[1].split("project1")[0]);
+document.querySelector("#status").textContent = url;
+          
              window.location.replace(url);
                        
         }
