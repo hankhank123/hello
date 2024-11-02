@@ -119,7 +119,11 @@
            let url3 =
           decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
           url3 = url3 + '?nfc=' + serialNumber;
-          window.location.replace(url3);
+
+           window.open(url3);
+		  
+          setTimeout(window.close, 5000);
+     
         }
       });
     </script>
