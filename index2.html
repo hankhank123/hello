@@ -59,6 +59,7 @@
               sourceOption.text = element.label
               sourceOption.value = element.deviceId
               selectedDeviceId = element.deviceId
+              sourceSelect.textContent = element.label
               sourceSelect.appendChild(sourceOption)
             })
 
@@ -88,16 +89,17 @@
                 document.getElementById('result').textContent = result.text
                
                 alert(result.text );
+                
                 callback(result);
                window.stopcam = 1;
               	}
                
               }
               if (err && !(err instanceof ZXing.NotFoundException)) {
-              	if(window.stopcam == 0 ){
+              
                 console.error(err)
-                document.getElementById('result').textContent = err
-              	}
+             
+            
               }
             })
             console.log(`Started continous decode from camera with id ${selectedDeviceId}`)
