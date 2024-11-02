@@ -96,8 +96,12 @@
 
     <script>
       scanButton.addEventListener("click", async () => {
-        log("準備開始");
+       
 
+          window.url3 =
+          decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
+        
+         log(window.url3);
         try {
           const ndef = new NDEFReader();
           await ndef.scan();
