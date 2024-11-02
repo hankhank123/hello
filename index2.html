@@ -27,7 +27,7 @@
       </div>
 
       <div>
-        <video id="video" width="300" height="200" style="border: 1px solid gray"></video>
+        <video id="video"  style="border: 1px solid gray"></video>
       </div>
 
       <div id="sourceSelectPanel" style="display:none">
@@ -39,16 +39,10 @@
       <label>Result:</label>
       <pre><code id="result"></code></pre>
 
-      <p>See the <a href="https://github.com/zxing-js/library/tree/master/docs/examples/multi-camera/">source code</a>
-        for this example.</p>
+    
     </section>
 
-    <footer class="footer">
-      <section class="container">
-        <p>ZXing TypeScript Demo. Licensed under the <a target="_blank"
-            href="https://github.com/zxing-js/library#license" title="MIT">MIT</a>.</p>
-      </section>
-    </footer>
+   
 
   </main>
 
@@ -96,11 +90,7 @@
             console.log(`Started continous decode from camera with id ${selectedDeviceId}`)
           })
 
-          document.getElementById('resetButton').addEventListener('click', () => {
-            codeReader.reset()
-            document.getElementById('result').textContent = '';
-            console.log('Reset.')
-          })
+         
 
         })
         .catch((err) => {
