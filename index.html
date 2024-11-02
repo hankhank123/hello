@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="Web NFC 範例" />
+    <meta name="description" content="Web NFC " />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Web NFC </title>
@@ -19,7 +19,7 @@
   </head>
 
   <body style="text-align: center;  background-color: #A9C6DE;">
-    <h2 style="margin: 0;">Web NFC 範例</h2>
+    <h2 style="margin: 0;">Web NFC</h2>
    
 
     <p style="width: 100vw; max-width: 300px; text-align: justify; margin: 0 auto">
@@ -117,22 +117,11 @@
             
           });
         } catch (error) {
-
-       
-          
-          log("錯誤:" + error);
           serialNumber = '5566';
-           let url2 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1?nfc=';
-          
-           url2 = url2 +  serialNumber;
-
-
-          window.open(url2);
-
            let url3 =
           decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
-
-          setTimeout(window.close, 5000);
+          url3 = url3 + serialNumber;
+          window.location.replace(url1);
         }
       });
     </script>
