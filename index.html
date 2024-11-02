@@ -130,10 +130,10 @@ document.querySelector("#log").textContent = uu1 + uu2 + uu3 + uu4 + uu5 ;
 
                  document.querySelector("#status").textContent = url ;
                    
-               url =  decodeURIComponent(  url.split("&para=")[1].split("project1")[0]);
+              let url2 =  decodeURIComponent(  url.split("&para=")[1].split("project1")[0]);
 
      
-             window.location.replace(url);
+             window.location.replace(url2);
                        
         }
       });
