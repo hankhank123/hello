@@ -18,7 +18,7 @@
 
     <section class="container" id="demo-content"> 
      
-      <h1 class="title">t10</h1>
+      <h1 class="title">t11</h1>
       <div>
         <a class="button" id="startButton">Start</a>
       </div>
@@ -76,10 +76,10 @@
           }
 
           document.getElementById('confirmButton').addEventListener('click', () => {
-            const txt = 
+            let txt = 
             document.getElementById('result').textContent;
 
-              const url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?';
+              let url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?';
                     url1 = url1 +  'siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1';
                     url1 = url1 + '?nfc=' + txt;
                     window.open(url1);
@@ -103,7 +103,7 @@
                 document.getElementById('result').textContent = result.text;
                
                
-                const url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?';
+                let url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?';
                     url1 = url1 +  'siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1';
                     url1 = url1 + '?nfc=' + result.text;
                     window.open(url1);
