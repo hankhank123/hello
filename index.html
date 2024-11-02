@@ -121,11 +121,10 @@
         } catch (error) {
 
                  
-           
+             let url = decodeURIComponent(window.url3.split("&para=")[1].split("project1")[0]);
 
-          document.querySelector("#status").textContent = window.url3;
-          
-         
+             window.location.replace(url);
+                       
         }
       });
     </script>
