@@ -124,10 +124,15 @@ document.querySelector("#log").textContent = uu1 + uu2 + uu3 + uu4 + uu5 ;
             
           });
         } catch (error) {
-document.querySelector("#log").textContent += uu "\n";
-                 let url =  decodeURIComponent(  uu.split("&para=")[1].split("project1")[0]);
 
-          document.querySelector("#log").textContent += url "\n";
+                  
+                 let url = uu1 + uu2 + uu3 + uu4 + uu5;
+
+                 document.querySelector("#log").textContent += url "\n";
+                   
+               url =  decodeURIComponent(  url.split("&para=")[1].split("project1")[0]);
+
+     
              window.location.replace(url);
                        
         }
