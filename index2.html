@@ -87,10 +87,15 @@
               	
                 console.log(result)
 
-                    alert(result.text )
+                
                 document.getElementById('result').textContent = result.text
-               
-              
+
+
+                   setTimeout(function(){
+
+                       alert(result.text )
+                   }, 100)
+                
                 
                
                window.stopcam = 0
