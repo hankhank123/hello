@@ -71,18 +71,26 @@
           }
 
           document.getElementById('startButton').addEventListener('click', () => {
+          	window.stopcam = 0;
           	
           	 codeReader.reset()
             document.getElementById('result').textContent = '';
           	
             codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
               if (result) {
+              	
+              	if( window.stopcam == 1 ){
+              	
+              	}
+              	else{
+              	
                 console.log(result)
                 document.getElementById('result').textContent = result.text
                
                 alert(result.text );
                 
-                 callback(result);
+               window.stopcam = 1;
+              	}
                
               }
               if (err && !(err instanceof ZXing.NotFoundException)) {
