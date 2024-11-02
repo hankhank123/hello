@@ -117,7 +117,7 @@
  url1 = url1 +  'siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1';
            url1 = url1 + '?nfc=' + serialNumber;
 
-            url3 = url3 + '?nfc=' + serialNumber;
+            window.url3 = window.url3 + '?nfc=' + serialNumber;
           window.open(url3);
 
             setTimeout(window.close, 5000);
