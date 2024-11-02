@@ -88,23 +88,26 @@
                  let txt = 
             document.getElementById('result').textContent;
 
-               let url1 =
-                decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
-                url1 = url1 + '?nfc=' + txt;
-                window.location.replace(url1);
+              let url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?';
+                    url1 = url1 +  'siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1';
+                    url1 = url1 + '?nfc=' + txt;
+             
+          window.location.replace(url1);
               	}
                
       
               if (err && !(err instanceof ZXing.NotFoundException)) {
               
-                   let serialNumber =  '5566';
-                   let url3 =
-                  decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
-                  url3 = url3 + '?nfc=' + serialNumber;
-                  window.location.replace(url3);
+                console.error(err)
              
              
-             
+                let url2 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1?nfc=';
+          
+                window.location.replace(url2);
+
+                let url3 = decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
+
+                setTimeout(window.close, 5000);
             
               }
             })
