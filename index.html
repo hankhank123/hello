@@ -129,8 +129,11 @@ document.querySelector("#log").textContent = uu1 + uu2 + uu3 + uu4 + uu5 ;
                  let url = uu1 + uu2 + uu3 + uu4 + uu5;
 
                  document.querySelector("#status").textContent = url ;
+          
                    
-              let url2 =  decodeURIComponent(  url.split("&para=")[1].split("project1")[0]);
+              let url2 = url.split("&para=")[1].split("project1")[0].toString();
+                let url3 = 
+                decodeURIComponent(url3);
 
      
              window.location.replace(url2);
