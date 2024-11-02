@@ -97,16 +97,15 @@
     <script>
       scanButton.addEventListener("click", async () => {
        
-
-          window.url3 =
-          decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
-        
-         log(window.url3);
         try {
           const ndef = new NDEFReader();
           await ndef.scan();
-          log("> 開始掃描");
 
+window.url3 =
+          decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
+            
+          log(window.url3);
+          
           ndef.addEventListener("readingerror", () => {
             log("無法讀取，請更換 NFC Tag");
           });
@@ -128,12 +127,10 @@
             window.url3 =
           decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
 
- ChromeSamples.setStatus(window.url3);
-          
-          serialNumber = '5566';
-                window.url3 = window.url3 + '?nfc=' + serialNumber;
+           log(window.url3);
 
-             window.location.replace(window.url3);
+          
+         
         }
       });
     </script>
