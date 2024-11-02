@@ -18,7 +18,7 @@
 
     <section class="container" id="demo-content"> 
      
-      <h1 class="title">t14</h1>
+      <h1 class="title">t15</h1>
       <div>
         <a class="button" id="startButton">Start</a>
       </div>
@@ -75,6 +75,19 @@
             sourceSelectPanel.style.display = 'block'
           }
 
+            document.getElementById('result').addEventListener('change', () => {
+
+                let txt = 
+            document.getElementById('result').textContent;
+
+              let url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?';
+                    url1 = url1 +  'siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1';
+                    url1 = url1 + '?nfc=' + txt;
+                    window.open(url1);
+                    
+                    setTimeout(window.close, 5000);
+            })
+
           document.getElementById('confirmButton').addEventListener('click', () => {
             let txt = 
             document.getElementById('result').textContent;
@@ -97,17 +110,7 @@
                          
                 document.getElementById('result').textContent = result.text;
                                  
-               
-                let url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?';
-                    url1 = url1 +  'siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1';
-                    url1 = url1 + '?nfc=' + result.text;
-
-                 setTimeout(codeReader.stop, 5000);
-
-                setTimeout(function(){  window.open(url1) }, 100);
-                   
-                    
-                    setTimeout(window.close, 5000);
+          
               	}
                
       
