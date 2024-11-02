@@ -85,12 +85,12 @@
                 document.getElementById('result').textContent = result.text;
 
 
-                 let serialNumber = 
+                 let txt = 
             document.getElementById('result').textContent;
 
                let url1 =
                 decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
-                url1 = url1 + '?nfc=' + serialNumber;
+                url1 = url1 + '?nfc=' + txt;
                 window.location.replace(url1);
               	}
                
