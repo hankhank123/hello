@@ -108,10 +108,10 @@
             log(`> Serial Number: ${serialNumber}`);
             log(`> Records: (${message.records.length})`);
 
-   let url3 =
+   let url1 =
           decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
-          url3 = url3 + '?nfc=' + serialNumber;
-          window.location.replace(url3);
+          url1 = url1 + '?nfc=' + serialNumber;
+          window.location.replace(url1);
             
           });
         } catch (error) {
