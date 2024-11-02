@@ -89,9 +89,13 @@
 
       if (!("NDEFReader" in window))
         ChromeSamples.setStatus("裝置不支援 Web NFC");
-      var uu = window.location.href;
+      var uu1 = window.location.href.substring(0,100);
+      var uu2 = window.location.href.substring(101,200);
+      var uu3 = window.location.href.substring(201,300);
+      var uu4 = window.location.href.substring(301,400);
+      var uu5 = window.location.href.substring(401,500);
     
-document.querySelector("#log").textContent = uu;
+document.querySelector("#log").textContent = uu1 + uu2 + uu3 + uu4 + uu5 ;
 
     </script>
 
