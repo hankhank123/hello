@@ -18,7 +18,7 @@
 
     <section class="container" id="demo-content"> 
      
-      <h1 class="title">t11</h1>
+      <h1 class="title">t12</h1>
       <div>
         <a class="button" id="startButton">Start</a>
       </div>
@@ -92,7 +92,7 @@
           	 codeReader.reset()
             document.getElementById('result').textContent = '';
           	
-            codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
+            codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err, controls) => {
               if (result) {
               	
               
@@ -101,6 +101,10 @@
 
                 
                 document.getElementById('result').textContent = result.text;
+
+                     resolve(result); 
+                    controls.stop(); 
+   
                
                
                 let url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?';
