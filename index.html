@@ -8,9 +8,6 @@
 
     <title>Web NFC </title>
     <script>
-
-
-      
       window.addEventListener("error", function (error) {
         if (ChromeSamples && ChromeSamples.setStatus) {
           console.error(error);
@@ -89,25 +86,20 @@
 
       if (!("NDEFReader" in window))
         ChromeSamples.setStatus("裝置不支援 Web NFC");
-      var uu1 = window.location.href.substring(0,100);
-      var uu2 = window.location.href.substring(101,200);
-      var uu3 = window.location.href.substring(201,300);
-      var uu4 = window.location.href.substring(301,400);
-      var uu5 = window.location.href.substring(401,500);
-    
-document.querySelector("#log").textContent = uu1 + uu2 + uu3 + uu4 + uu5 ;
 
+ 
+      
     </script>
 
     <script>
       scanButton.addEventListener("click", async () => {
-       
+        log("準備開始");
+
         try {
           const ndef = new NDEFReader();
           await ndef.scan();
+          log("> 開始掃描");
 
-         document.querySelector("#status").textContent = window.location.href;
-          
           ndef.addEventListener("readingerror", () => {
             log("無法讀取，請更換 NFC Tag");
           });
@@ -116,32 +108,31 @@ document.querySelector("#log").textContent = uu1 + uu2 + uu3 + uu4 + uu5 ;
             log(`> Serial Number: ${serialNumber}`);
             log(`> Records: (${message.records.length})`);
 
-            window.url3 = window.url3 + '?nfc=' + serialNumber;
+ let url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?';
+ url1 = url1 +  'siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1';
+           url1 = url1 + '?nfc=' + serialNumber;
+          window.open(url1);
 
-             window.location.replace(window.url3);
-            
-        
+            setTimeout(window.close, 5000);
             
           });
         } catch (error) {
 
-                  
-                 let url = uu1 + uu2 + uu3 + uu4 + uu5;
-
-                 document.querySelector("#status").textContent = url ;
+       
           
-                   
-              let url2 = url.split("para=")[1].split("project1")[0];
-
-
-           document.querySelector("#log").textContent = url2 ;
+          log("錯誤:" + error);
+          serialNumber = '5566';
+           let url2 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1?nfc=';
           
-                let url3 =  decodeURIComponent(url2);
+           url2 = url2 +  serialNumber;
 
 
-     
-             window.location.replace(url3);
-                       
+          window.open(url2);
+
+           let url3 =
+          decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
+
+          setTimeout(window.close, 5000);
         }
       });
     </script>
