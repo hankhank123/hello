@@ -16,7 +16,7 @@
 
   <main class="wrapper" style="padding-top:2em">
 
-    <section class="container" id="demo-content"> 
+    <section class="container" id="demo-content">
      
     <!--  <h1 class="title">t17</h1> -->
       <div>
@@ -38,7 +38,7 @@
       <label>Result:</label>
       <pre><code id="result"></code></pre>
 
-    
+   
     </section>
 
    
@@ -71,21 +71,21 @@
 
             const sourceSelectPanel = document.getElementById('sourceSelectPanel')
             sourceSelectPanel.style.display = 'block'
-          } 
-          
+          }
+         
 
           document.getElementById('startButton').addEventListener('click', () => {
-          
-          	 codeReader.reset()
+         
+          codeReader.reset()
             document.getElementById('result').textContent = '';
-          	
+         
             codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
               if (result) {
                          
                 document.getElementById('result').textContent = result.text;
 
 
-                 let txt = 
+                 let txt =
             document.getElementById('result').textContent;
 
               let url1 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?';
@@ -93,22 +93,22 @@
                     url1 = url1 + '?nfc=' + txt;
              
           window.location.replace(url1);
-              	}
+              }
                
-      
+     
               if (err && !(err instanceof ZXing.NotFoundException)) {
-              
+             
                 console.error(err)
              
              
                 let url2 = 'https://trial1-8llu3fai.launchpad.cfapps.ap21.hana.ondemand.com/site?siteId=10596eba-479a-4c53-a699-2242b92ff35f#ztest1-disp?sap-ui-app-id-hint=saas_approuter_ns.project1?nfc=';
-          
+         
                 window.location.replace(url2);
 
                 let url3 = decodeURIComponent(window.location.href.split("&para=")[1].split("project1")[0]);
 
                 setTimeout(window.close, 5000);
-            
+           
               }
             })
             console.log(`Started continous decode from camera with id ${selectedDeviceId}`)
