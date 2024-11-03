@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="ZXing for JS">
 
-  <title>ZXing Decoding</title>
+  <title>ZXing Decoding from camera stream t1</title>
  
   <link rel="stylesheet" rel="preload" as="style" onload="this.rel='stylesheet';this.onload=null"
     href="milligram.min.css">
@@ -20,7 +20,7 @@
      
     <!--  <h1 class="title">t17</h1> -->
       <div>
-        <a class="button" id="startButton" >Scan</a>
+        <a class="button" id="startButton" color="blue">Start</a>
       </div>
 
       <div>
@@ -49,7 +49,7 @@
   <script src="https://simplycalc.com/base64.js"></script>
   <script type="text/javascript">
   
-  		var test = false;
+  		var test = true;
 		if(!test)
 		{
 			var url = window.location.href;
@@ -67,29 +67,7 @@
 		
 		
 debugger;
-
-
-	navigator.mediaDevices.getUserMedia({
-          video: { facingMode: 'environment' }
-        })
-        .then(async stream => 
-	{
- await this.sleep(250);
-	 this.deviceFound = true;
-		 let videoTrack = stream.getVideoTracks()[0];
-		if (typeof videoTrack.getCapabilities !== 'undefined')
-		{
-			 let capabilities = videoTrack.getCapabilities();
-			if ( 'zoom' in capabilities)
-			{
-				videoTrack.applyConstraints({ advanced: [{ zoom: 2 }]  });
-			}
-			
-		}	
-		
-	}	
-         
-     
+  
   
     window.addEventListener('load', function () {
       let selectedDeviceId;
@@ -119,6 +97,27 @@ debugger;
           
 
           document.getElementById('startButton').addEventListener('click', () => {
+          	
+          	
+          	navigator.mediaDevices
+        .getUserMedia({
+          video: { facingMode: 'environment' }
+        }).then(async stream => {
+        	
+        	 let videoTrack = stream.getVideoTracks()[0];
+        	  if (typeof videoTrack.getCapabilities !== 'undefined') 
+        	  {
+        	  	 let capabilities = videoTrack.getCapabilities();
+        	  	 if ( 'zoom' in capabilities) 
+        	  	 {
+        	  	 	 videoTrack.applyConstraints({
+                 advanced: [{ zoom: 2.5 }]
+              })
+        	  	 	
+        	  	 }
+        	  }
+        	
+        });
           
           	 codeReader.reset()
             document.getElementById('result').textContent = '';
