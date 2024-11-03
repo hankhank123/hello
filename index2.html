@@ -69,30 +69,27 @@
 debugger;
 
 
-	  navigator.mediaDevices
-        .getUserMedia({
+	navigator.mediaDevices.getUserMedia({
           video: { facingMode: 'environment' }
         })
-        .then(async stream => {
-          await this.sleep(250)
-          // camera device found
-          this.deviceFound = true
-          // get device capabilities (zoom and others)
-          let videoTrack = stream.getVideoTracks()[0]
-          if (typeof videoTrack.getCapabilities !== 'undefined') {
-            let capabilities = videoTrack.getCapabilities()
-            // set zoom params
-            if ( 'zoom' in capabilities) {
-              videoTrack.applyConstraints({
-                 advanced: [{ zoom: 2 }]
-              })
-            }
-          }
-        })
-        .catch(error => {
-          // no media device found
-        })
-    }
+        .then(async stream => 
+	{
+ await this.sleep(250);
+	 this.deviceFound = true;
+		 let videoTrack = stream.getVideoTracks()[0];
+		if (typeof videoTrack.getCapabilities !== 'undefined')
+		{
+			 let capabilities = videoTrack.getCapabilities();
+			if ( 'zoom' in capabilities)
+			{
+				videoTrack.applyConstraints({ advanced: [{ zoom: 2 }]  });
+			}
+			
+		}	
+		
+	}	
+         
+     
   
     window.addEventListener('load', function () {
       let selectedDeviceId;
