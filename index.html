@@ -133,7 +133,7 @@ debugger;
 			  var base64 =  this_para.get('para');
 			  if( base64 && base64url_sniff(base64) )
 			  {
-			    var new_sap_url = base64_decode(base64) + '&nfc=' + serialNumber ;
+			    var new_sap_url = base64_decode(base64) + '?nfc=' + serialNumber ;
 			     window.location.replace(new_sap_url);
 			  } 
 			}
@@ -152,7 +152,7 @@ debugger;
 			  var base64 =  this_para.get('para');
 			  if( base64 && base64url_sniff(base64) )
 			  {
-			    var new_sap_url = base64_decode(base64) + '&nfc=' + serialNumber ;
+			    var new_sap_url = base64_decode(base64) + '?nfc=' + serialNumber ;
 			     window.location.replace(new_sap_url);
 			  } 
 			}
