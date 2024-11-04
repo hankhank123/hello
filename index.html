@@ -19,6 +19,9 @@
   </head>
 
   <body style="text-align: center;  background-color: #A9C6DE;">
+  <div style="text-align: right;  background-color: #A9C6DE;">
+    <button id="exitButton">X</button>
+  </div>	  
     <h2 style="margin: 0;">Web NFC</h2>
    
 
@@ -110,6 +113,22 @@ debugger;
     </script>
 
     <script>
+
+    exitButton.addEventListener("click", async () => {
+    	debugger;
+    	
+    		var this_para = this_url.searchParams;
+			if( this_para.has('para') );    // true
+			{
+			  var base64 =  this_para.get('para');
+			  if( base64 && base64url_sniff(base64) )
+			  {
+			    var new_sap_url = base64_decode(base64)  ;
+			     window.location.replace(new_sap_url);
+			  } 
+			}
+    });
+	    
       scanButton.addEventListener("click", async () => {
         log("準備開始");
 
