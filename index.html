@@ -121,10 +121,20 @@ debugger;
 			if( this_para.has('para') );    // true
 			{
 			  var base64 =  this_para.get('para');
+			  var new_tmp_url =  base64_decode(base64);	
 			  if( base64 && base64url_sniff(base64) )
-			  {
-			    var new_sap_url = base64_decode(base64)  ;
-			     window.location.replace(new_sap_url);
+			  { 
+			      if( new_tmp_url.indexOf('dummy_url')
+			      {
+				  var new_tmp_url2 = new_tmp_url.replace('dummy_url', serialNumber );
+				  window.location.replace(new_tmp_url2);
+			      }
+			      else
+			      {
+			       var new_sap_url = base64_decode(base64) + '&nfc=' + serialNumber ;
+			       window.location.replace(new_sap_url);
+			      }
+			  
 			  } 
 			}
     });
@@ -150,10 +160,20 @@ debugger;
 			if( this_para.has('para') );    // true
 			{
 			  var base64 =  this_para.get('para');
+			  var new_tmp_url =  base64_decode(base64);	
 			  if( base64 && base64url_sniff(base64) )
-			  {
-			    var new_sap_url = base64_decode(base64) + '&nfc=' + serialNumber ;
-			     window.location.replace(new_sap_url);
+			  { 
+			      if( new_tmp_url.indexOf('dummy_url')
+			      {
+				  var new_tmp_url2 = new_tmp_url.replace('dummy_url', serialNumber );
+				  window.location.replace(new_tmp_url2);
+			      }
+			      else
+			      {
+			       var new_sap_url = base64_decode(base64) + '&nfc=' + serialNumber ;
+			       window.location.replace(new_sap_url);
+			      }
+			  
 			  } 
 			}
             
@@ -169,10 +189,20 @@ debugger;
 			if( this_para.has('para') );    // true
 			{
 			  var base64 =  this_para.get('para');
+			  var new_tmp_url =  base64_decode(base64);	
 			  if( base64 && base64url_sniff(base64) )
-			  {
-			    var new_sap_url = base64_decode(base64) + '&nfc=' + serialNumber ;
-			     window.location.replace(new_sap_url);
+			  { 
+			      if( new_tmp_url.indexOf('dummy_url')
+			      {
+				  var new_tmp_url2 = new_tmp_url.replace('dummy_url', serialNumber );
+				  window.location.replace(new_tmp_url2);
+			      }
+			      else
+			      {
+			       var new_sap_url = base64_decode(base64) + '&nfc=' + serialNumber ;
+			       window.location.replace(new_sap_url);
+			      }
+			  
 			  } 
 			}
 			
