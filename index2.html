@@ -83,11 +83,22 @@ exitButton.addEventListener("click", async () => {
 			if( this_para.has('para') );    // true
 			{
 			  var base64 =  this_para.get('para');
-			  if( base64 && base64url_sniff(base64) )
+			  if( base64 )
 			  {
-			    var new_sap_url = base64_decode(base64);
-				var new_sap_url2 = 	new_sap_url	+ "&barcode=12" ;
-			     window.location.replace(new_sap_url2);
+			    var serialNumber = 'exit'; 
+
+			      if( new_tmp_url.indexOf('dummy_barcode') )
+			      {
+				  var new_tmp_url2 = new_tmp_url.replace('dummy_barcode', serialNumber );
+				  window.location.replace(new_tmp_url2);
+			      }
+			      else
+			      {
+			       var new_sap_url = base64_decode(base64) + '&barcode=' + serialNumber ;
+			       window.location.replace(new_sap_url);
+			      }
+				  
+			    
 			  } 
 			}
     });
@@ -160,10 +171,20 @@ exitButton.addEventListener("click", async () => {
 			if( this_para.has('para') );    // true
 			{
 			  var base64 =  this_para.get('para');
-			  if( base64 && base64url_sniff(base64) )
+			  if( base64  )
 			  {
-			    var new_sap_url = base64_decode(base64) + '&barcode=' + serialNumber ;
-			     window.location.replace(new_sap_url);
+                              if( new_tmp_url.indexOf('dummy_barcode') )
+			      {
+				  var new_tmp_url2 = new_tmp_url.replace('dummy_barcode', serialNumber );
+				  window.location.replace(new_tmp_url2);
+			      }
+			      else
+			      {
+			       var new_sap_url = base64_decode(base64) + '&barcode=' + serialNumber ;
+			       window.location.replace(new_sap_url);
+			      }
+				  
+			
 			  } 
 			}
              
@@ -174,16 +195,25 @@ exitButton.addEventListener("click", async () => {
               
                 console.error(err)
              
-              var serialNumber = "";
+              var serialNumber = "5566";
                		debugger;
 			var this_para = this_url.searchParams;
 			if( this_para.has('para') );    // true
 			{
 			  var base64 =  this_para.get('para');
-			  if( base64 && base64url_sniff(base64) )
+			  if( base64  )
 			  {
-			    var new_sap_url = base64_decode(base64) + '&barcode=' + serialNumber ;
-			     window.location.replace(new_sap_url);
+
+				   if( new_tmp_url.indexOf('dummy_barcode') )
+			      {
+				  var new_tmp_url2 = new_tmp_url.replace('dummy_barcode', serialNumber );
+				  window.location.replace(new_tmp_url2);
+			      }
+			      else
+			      {
+			       var new_sap_url = base64_decode(base64) + '&barcode=' + serialNumber ;
+			       window.location.replace(new_sap_url);
+			      }
 			  } 
 			}
             
